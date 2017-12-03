@@ -1,0 +1,15 @@
+{
+    "window.zoomLevel": 0,
+    "editor.fontSize": 18,
+    "editor.wordWrap": "on",
+    "sublimeTextKeymap.promptV3Features": true,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.snippetSuggestions": "top",
+    "editor.formatOnPaste": true,
+    "workbench.panel.location": "right",
+    "workbench.colorTheme": "bashling",
+    "editor.renderWhitespace": "all",
+    "editor.detectIndentation": false,
+    "editor.insertSpaces": false,
+    "editor.tabSize": 2
+}

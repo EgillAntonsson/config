@@ -1,0 +1,45 @@
+# A template for ~/.gitconfig
+[user]
+	# set your name and email
+	# name = 
+	# email = 
+[push]
+	default = simple
+[pull]
+	rebase = true
+[core]
+	# point to the file
+	# excludesfile = % The path to repo EgillAntonsson/config %/excludefile_git
+	
+	# use on Unix
+	# autocrlf = input
+	# use on Win
+	# autocrlf = true
+
+[difftool]
+	prompt = false
+[alias]
+	s = !git status
+	c = !git commit -m
+	co = !git checkout
+	b = !git branch -vv
+	a = !git add
+	po = !git pull origin
+	pom = !git pull origin master
+	pod = !git pull origin develop
+	u = !git push
+	uo = !git push origin
+	uom = !git push origin master
+	uod = !git push origin develop
+	d = !git diff
+	dh = !git diff HEAD
+	r = !git reset
+	rh = !git reset --hard HEAD
+	cl = !git clone
+	f = !git fetch
+	p = !git pull
+	m = !git merge
+	l = !git log
+	t = !git stash
+	tp = !git stash pop
+	gr = !git log --pretty=oneline --abbrev-commit --decorate --graph
