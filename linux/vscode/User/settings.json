@@ -1,6 +1,6 @@
 {
-    "window.zoomLevel": 0,
-    "editor.fontSize": 18,
+		"window.zoomLevel": 0,
+    "editor.fontSize": 16,
     "editor.wordWrap": "on",
     "sublimeTextKeymap.promptV3Features": true,
     "editor.multiCursorModifier": "ctrlCmd",

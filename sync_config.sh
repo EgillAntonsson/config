@@ -24,27 +24,18 @@ esac
 mkdir -p ${os_dir}/vscode
 cp -R $vscode_user_dir ${os_dir}/vscode/
 
-text=$(git status)
-changed_text="Changes to be committed"
-untracked_files="Untracked files"
+nr_of_untracked_files=$(git status --porcelain 2>/dev/null| grep "^??" | wc -l)
+nr_of_modified_files=$(git diff --name-only | wc -l)
+echo "nr of untracked files ${nr_of_untracked_files}"
+echo "nr of modified files ${nr_of_modified_files}"
 
-dirty=false
-
-if [[ ${text} = *"$changed_text"* ]]; then
-		dirty=true
-fi
-
-if [[ ${text} = *"$untracked_files"* ]]; then
-		dirty=true
-fi
-
-if [[ ${dirty} ]]; then
+if [[ (( $nr_of_untracked_files > 0 )) || (( $nr_of_modified_files > 1 )) ]]; then
 	echo "changes in local repo. prepping to push to remote."
 	git add .
 	git commit -m "script sync_config.sh commited changes"
 	git pull
 	git push
 else
-	echo "No changes in local repo, git pulling and then done."
-	git pull
+	echo "no enough changes to do a push. Doing git pull then "
+	# git pull
 fi
